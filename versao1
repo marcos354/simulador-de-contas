@@ -1,0 +1,84 @@
+import random
+import time
+
+titulo = 'Gerador de contas de somar'
+'''
+Faça um programa em que é gerada contas de somar automaticamente
+
+Autor: Marcos
+Data: 13/03/2023
+'''
+
+print('Bem vindo ao programa', titulo)
+
+while True:
+    
+    print('*' * 120)
+    print('Escolha (A) para conta de somar, (M) para multiplicar, (D) para divisão, (S) para diminuição e (Q) para Sair.')
+    escolha_usuario = input().upper()
+
+    if escolha_usuario == 'A':
+        print('Você optou por uma nova conta de adição')
+    elif escolha_usuario == 'M':
+        print('Você optou por uma nova conta multiplicação')
+    elif escolha_usuario == 'D':
+        print('Você optou por uma nova conta divisão')
+    elif escolha_usuario == 'S':
+        print('Você optou por uma nova conta diminuição')
+    elif escolha_usuario == 'Q':
+        print("Você escolheu sair")
+        break
+    else:
+        print("Você escolheu uma opção errada")
+
+    numero1 = random.randint(1,100000)
+    numero2 = random.randint(1,100000)
+    numero3 = random.randint(1,100)
+    numero4 = random.randint(1, 9)
+    numero5 = random.randint(1, 10)
+    numero6 = random.randint(1, 10)
+    numero7 = random.randint(1, 1000)
+    numero8 = random.randint(1, 1000)
+
+    if escolha_usuario == 'A':
+        print(numero1, '+',  numero2, '= ' )
+        time.sleep(40)
+        print('*' * 20)
+        mostra_resultado = input('Insira "R" para resultado: ').upper()
+        if mostra_resultado == "R":
+            resultado = numero1 + numero2
+            print(numero1, '+', numero2, '= ', resultado)
+        time.sleep(2)
+    if escolha_usuario == 'M':
+        print(numero3, '*',  numero4, '= ' )
+        time.sleep(30)
+        print('*' * 20)
+        mostra_resultado = input('Insira "R" para resultado: ').upper()
+        if mostra_resultado == "R":
+            resultado = numero3 * numero4
+            print(numero3, '*', numero4, '= ', resultado)
+        time.sleep(2)
+    if escolha_usuario == 'D':
+        if numero5 > numero6:
+            print(numero5, '/', numero6, '= ')
+            time.sleep(50)
+            print('*' * 20)
+        mostra_resultado = input('Insira "R" para resultado: ').upper()
+        if mostra_resultado == "R":
+            resultado = numero5 / numero6
+            print(numero5, '/', numero6, '= ', resultado)
+        else:
+            continue
+
+        time.sleep(2)
+    if escolha_usuario == 'S':
+        if numero7 > numero8:
+            print(numero7, '-', numero8, '= ')
+            time.sleep(30)
+            print('*' * 20)
+            resultado = numero7 - numero8
+            print(numero7, '-', numero8, '= ', resultado)
+        else:
+            print('Escolha novamente')
+            continue
+        time.sleep(2)
